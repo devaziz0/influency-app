@@ -59,9 +59,21 @@ class InfluencerFeed extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CardProject(),
-                CardProject(),
-                CardProject(),
+                GestureDetector(
+                  onTap: () =>
+                      {Navigator.pushNamed(context, '/campaign-details')},
+                  child: CardProject(),
+                ),
+                GestureDetector(
+                  onTap: () =>
+                      {Navigator.pushNamed(context, '/campaign-details')},
+                  child: CardProject(),
+                ),
+                GestureDetector(
+                  onTap: () =>
+                      {Navigator.pushNamed(context, '/campaign-details')},
+                  child: CardProject(),
+                ),
               ],
             ),
           ),

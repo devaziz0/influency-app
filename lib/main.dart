@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Argon PRO Flutter',
         theme: ThemeData(fontFamily: 'OpenSans'),
-        initialRoute: "/campaign-details",
+        initialRoute: "/influencer-feed",
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/onboarding": (BuildContext context) => new Onboarding(),
