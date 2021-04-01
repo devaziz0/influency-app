@@ -78,7 +78,7 @@ class _NavbarState extends State<Navbar> {
                 ? (tagsExist ? 211.0 : 178.0)
                 : (tagsExist ? 262.0 : 210.0))
             : (!categories
-                ? (tagsExist ? 162.0 : 102.0)
+                ? (tagsExist ? 140.0 : 102.0)
                 : (tagsExist ? 200.0 : 150.0)),
         decoration: BoxDecoration(
             color: !widget.transparent ? widget.bgColor : Colors.transparent,
