@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/campaign-application.dart';
 import 'package:my_app/screens/campaign-details.dart';
 import 'package:my_app/screens/influencer-feed.dart';
 
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
           "/onboarding": (BuildContext context) => new Onboarding(),
           "/influencer-feed": (BuildContext context) => new InfluencerFeed(),
           "/campaign-details": (BuildContext context) => new CampaignScreen(),
+          "/campaign-application": (BuildContext context) =>
+              new CampaignApplicationScreen(),
           "/profile": (BuildContext context) => new Profile(),
           "/settings": (BuildContext context) => new Settings(),
           "/articles": (BuildContext context) => new Articles(),

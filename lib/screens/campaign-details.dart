@@ -333,7 +333,8 @@ class CampaignScreen extends StatelessWidget {
                   MaterialButton(
                     minWidth: MediaQuery.of(context).size.width * 0.7,
                     color: ArgonColors.header,
-                    onPressed: () => {},
+                    onPressed: () =>
+                        {Navigator.pushNamed(context, '/campaign-application')},
                     child: Text(
                       'Apply',
                       style: TextStyle(
