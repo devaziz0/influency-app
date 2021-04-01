@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/campaign-details.dart';
 import 'package:my_app/screens/influencer-feed.dart';
 
 // screens
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Argon PRO Flutter',
         theme: ThemeData(fontFamily: 'OpenSans'),
-        initialRoute: "/onboarding",
+        initialRoute: "/campaign-details",
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/onboarding": (BuildContext context) => new Onboarding(),
           "/influencer-feed": (BuildContext context) => new InfluencerFeed(),
+          "/campaign-details": (BuildContext context) => new CampaignScreen(),
           "/profile": (BuildContext context) => new Profile(),
           "/settings": (BuildContext context) => new Settings(),
           "/articles": (BuildContext context) => new Articles(),
