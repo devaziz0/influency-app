@@ -24,6 +24,9 @@ class CampaignScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
+                padding: EdgeInsets.all(8),
+              ),
+              Padding(
                 padding: EdgeInsets.only(left: 12),
                 child: Text(
                   'Advertise my shampoo products',
