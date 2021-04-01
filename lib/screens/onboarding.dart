@@ -78,7 +78,8 @@ class Onboarding extends StatelessWidget {
                       color: ArgonColors.info,
                       onPressed: () {
                         // Respond to button press
-                        Navigator.pushReplacementNamed(context, '/home');
+                        Navigator.pushReplacementNamed(
+                            context, '/influencer-feed');
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4.0),

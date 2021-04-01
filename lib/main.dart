@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/influencer-feed.dart';
 
 // screens
 import 'package:my_app/screens/onboarding.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/onboarding": (BuildContext context) => new Onboarding(),
-          "/home": (BuildContext context) => new Home(),
+          "/influencer-feed": (BuildContext context) => new InfluencerFeed(),
           "/profile": (BuildContext context) => new Profile(),
           "/settings": (BuildContext context) => new Settings(),
           "/articles": (BuildContext context) => new Articles(),
