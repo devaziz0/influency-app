@@ -34,4 +34,7 @@ class ArgonColors {
   static const Color muted = Color.fromRGBO(136, 152, 170, 1.0);
 
   static const Color text = Color.fromRGBO(50, 50, 93, 1.0);
+
+  static const Color title = Color(0x32325D);
+  static const Color textColor = Color.fromRGBO(50, 50, 93, 1.0);
 }
