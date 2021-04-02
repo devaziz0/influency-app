@@ -47,7 +47,8 @@ class ArgonDrawer extends StatelessWidget {
                   icon: Icons.home,
                   onTap: () {
                     if (currentPage != "Home")
-                      Navigator.pushReplacementNamed(context, '/home');
+                      Navigator.pushReplacementNamed(
+                          context, '/influencer-feed');
                   },
                   iconColor: ArgonColors.primary,
                   title: "Home",

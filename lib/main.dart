@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/campaign-application.dart';
-import 'package:my_app/screens/campaign-details.dart';
-import 'package:my_app/screens/campaigns.dart';
-import 'package:my_app/screens/influencer-feed.dart';
+import 'package:my_app/screens/influencer/campaign-application.dart';
+import 'package:my_app/screens/influencer/campaign-details.dart';
+import 'package:my_app/screens/influencer/campaigns.dart';
+import 'package:my_app/screens/influencer/influencer-feed.dart';
 
 // screens
 import 'package:my_app/screens/onboarding.dart';
@@ -13,6 +13,7 @@ import 'package:my_app/screens/register.dart';
 import 'package:my_app/screens/notifications.dart';
 import 'package:my_app/screens/articles.dart';
 import 'package:my_app/screens/elements.dart';
+import 'package:my_app/screens/influencer/submission.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,10 +23,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Argon PRO Flutter',
         theme: ThemeData(fontFamily: 'OpenSans'),
-        initialRoute: "/campaigns",
+        initialRoute: "/application",
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/onboarding": (BuildContext context) => new Onboarding(),
+          "/application": (BuildContext context) => new SubmissionScreen(),
           "/influencer-feed": (BuildContext context) => new InfluencerFeed(),
           "/campaign-details": (BuildContext context) => new CampaignScreen(),
           "/campaigns": (BuildContext context) => new CampaignsScreen(),
