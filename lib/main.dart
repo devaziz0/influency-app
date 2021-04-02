@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:my_app/screens/influencer/campaign-application.dart';
 import 'package:my_app/screens/influencer/campaign-details.dart';
 import 'package:my_app/screens/influencer/campaigns.dart';
@@ -14,16 +15,23 @@ import 'package:my_app/screens/notifications.dart';
 import 'package:my_app/screens/articles.dart';
 import 'package:my_app/screens/elements.dart';
 import 'package:my_app/screens/influencer/submission.dart';
+import 'package:my_app/store/app-state.dart';
+import 'package:redux/redux.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  Store<AppState> store =
+      Store(null, initialState: AppState.newAppState(bottomBarPosition: 0));
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return StoreProvider<AppState>(
+      store: store,
+      child: MaterialApp(
         title: 'Argon PRO Flutter',
         theme: ThemeData(fontFamily: 'OpenSans'),
-        initialRoute: "/application",
+        initialRoute: "/influencer-feed",
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/onboarding": (BuildContext context) => new Onboarding(),
@@ -39,6 +47,8 @@ class MyApp extends StatelessWidget {
           "/elements": (BuildContext context) => new Elements(),
           "/account": (BuildContext context) => new Register(),
           "/notifications": (BuildContext context) => new Notifications(),
-        });
+        },
+      ),
+    );
   }
 }
