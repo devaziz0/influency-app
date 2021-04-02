@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:my_app/constants/Theme.dart';
+import 'package:my_app/store/app-state.dart';
 import 'package:my_app/widgets/card-project.dart';
 
 //widgets
@@ -12,6 +14,7 @@ import 'package:my_app/widgets/card-square.dart';
 import 'package:my_app/widgets/drawer.dart';
 
 import 'package:my_app/screens/product.dart';
+import 'package:redux/redux.dart';
 
 final Map<String, Map<String, String>> homeCards = {
   "Ice Cream": {
@@ -58,51 +61,55 @@ class _InfluencerFeedState extends State<InfluencerFeed> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: Navbar(
-          title: "Home",
-          tags: tags,
-          noShadow: true,
-        ),
-        backgroundColor: ArgonColors.bgColorScreen,
-        bottomNavigationBar: BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.home), title: Text("Home")),
-              BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.solidObjectUngroup, size: 16),
-                  title: Text("My Campaigns")),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), title: Text("Profile")),
-            ],
-            currentIndex: _selectedIndex,
-            selectedItemColor: ArgonColors.primary,
-            onTap: _onItemTapped),
-        // key: _scaffoldKey,
-        drawer: ArgonDrawer(currentPage: "Home"),
-        body: Container(
-          color: Colors.white,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTap: () =>
-                      {Navigator.pushNamed(context, '/campaign-details')},
-                  child: CardProject(),
+    return StoreConnector<AppState, Store<AppState>>(
+        builder: (context, store) => Scaffold(
+              appBar: Navbar(
+                title: "Home",
+                tags: tags,
+                noShadow: true,
+              ),
+              backgroundColor: ArgonColors.bgColorScreen,
+              bottomNavigationBar: BottomNavigationBar(
+                  items: [
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.home), title: Text("Home")),
+                    BottomNavigationBarItem(
+                        icon:
+                            Icon(FontAwesomeIcons.solidObjectUngroup, size: 16),
+                        title: Text("My Campaigns")),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.person), title: Text("Profile")),
+                  ],
+                  currentIndex: store.state.bottomBarPosition,
+                  selectedItemColor: ArgonColors.primary,
+                  onTap: _onItemTapped),
+              // key: _scaffoldKey,
+              drawer: ArgonDrawer(currentPage: "Home"),
+              body: Container(
+                color: Colors.white,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () =>
+                            {Navigator.pushNamed(context, '/campaign-details')},
+                        child: CardProject(),
+                      ),
+                      GestureDetector(
+                        onTap: () =>
+                            {Navigator.pushNamed(context, '/campaign-details')},
+                        child: CardProject(),
+                      ),
+                      GestureDetector(
+                        onTap: () =>
+                            {Navigator.pushNamed(context, '/campaign-details')},
+                        child: CardProject(),
+                      ),
+                    ],
+                  ),
                 ),
-                GestureDetector(
-                  onTap: () =>
-                      {Navigator.pushNamed(context, '/campaign-details')},
-                  child: CardProject(),
-                ),
-                GestureDetector(
-                  onTap: () =>
-                      {Navigator.pushNamed(context, '/campaign-details')},
-                  child: CardProject(),
-                ),
-              ],
+              ),
             ),
-          ),
-        ));
+        converter: (store) => store);
   }
 }
