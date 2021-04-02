@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/campaign-application.dart';
 import 'package:my_app/screens/campaign-details.dart';
+import 'package:my_app/screens/campaigns.dart';
 import 'package:my_app/screens/influencer-feed.dart';
 
 // screens
@@ -21,12 +22,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Argon PRO Flutter',
         theme: ThemeData(fontFamily: 'OpenSans'),
-        initialRoute: "/influencer-feed",
+        initialRoute: "/campaigns",
         debugShowCheckedModeBanner: false,
         routes: <String, WidgetBuilder>{
           "/onboarding": (BuildContext context) => new Onboarding(),
           "/influencer-feed": (BuildContext context) => new InfluencerFeed(),
           "/campaign-details": (BuildContext context) => new CampaignScreen(),
+          "/campaigns": (BuildContext context) => new CampaignsScreen(),
           "/campaign-application": (BuildContext context) =>
               new CampaignApplicationScreen(),
           "/profile": (BuildContext context) => new Profile(),

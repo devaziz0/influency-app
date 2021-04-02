@@ -31,7 +31,7 @@ class ArgonColors {
 
   static const Color inputError = Color.fromRGBO(252, 179, 164, 1.0);
 
-  static const Color muted = Color.fromRGBO(136, 152, 170, 1.0);
+  static const Color muted = Color.fromRGBO(136, 152, 170, 0.15);
 
   static const Color text = Color.fromRGBO(50, 50, 93, 1.0);
 
