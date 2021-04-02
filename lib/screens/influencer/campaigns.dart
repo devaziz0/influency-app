@@ -49,9 +49,22 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CampaignCard(),
-              CampaignCard(),
-              CampaignCard(),
+              GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, '/application')},
+                child: CampaignCard(),
+              ),
+              GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, '/application')},
+                child: CampaignCard(),
+              ),
+              GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, '/application')},
+                child: CampaignCard(),
+              ),
+              GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, '/application')},
+                child: CampaignCard(),
+              ),
             ],
           ),
         ),
