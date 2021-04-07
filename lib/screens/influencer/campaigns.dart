@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_app/constants/Theme.dart';
+import 'package:my_app/widgets/bottom-navbar.dart';
 import 'package:my_app/widgets/campaign-card.dart';
 import 'package:my_app/widgets/drawer.dart';
 import 'package:my_app/widgets/input.dart';
@@ -31,19 +32,7 @@ class _CampaignsScreenState extends State<CampaignsScreen> {
         noShadow: true,
       ),
       backgroundColor: ArgonColors.bgColorScreen,
-      bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), title: Text("Home")),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.solidObjectUngroup, size: 16),
-                title: Text("My Campaigns")),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person), title: Text("Profile")),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: ArgonColors.primary,
-          onTap: _onItemTapped),
+      bottomNavigationBar: BottomNavBar(),
       drawer: ArgonDrawer(currentPage: "Home"),
       body: Container(
         child: SingleChildScrollView(

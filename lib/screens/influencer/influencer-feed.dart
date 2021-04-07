@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_app/actions/app-state-action.dart';
 
 import 'package:my_app/constants/Theme.dart';
 import 'package:my_app/store/app-state.dart';
+import 'package:my_app/widgets/bottom-navbar.dart';
 import 'package:my_app/widgets/card-project.dart';
 
 //widgets
@@ -53,11 +55,7 @@ class InfluencerFeed extends StatefulWidget {
 class _InfluencerFeedState extends State<InfluencerFeed> {
   int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  void _onItemTapped(AppState store, int index) {}
 
   @override
   Widget build(BuildContext context) {
@@ -69,20 +67,7 @@ class _InfluencerFeedState extends State<InfluencerFeed> {
                 noShadow: true,
               ),
               backgroundColor: ArgonColors.bgColorScreen,
-              bottomNavigationBar: BottomNavigationBar(
-                  items: [
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.home), title: Text("Home")),
-                    BottomNavigationBarItem(
-                        icon:
-                            Icon(FontAwesomeIcons.solidObjectUngroup, size: 16),
-                        title: Text("My Campaigns")),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.person), title: Text("Profile")),
-                  ],
-                  currentIndex: store.state.bottomBarPosition,
-                  selectedItemColor: ArgonColors.primary,
-                  onTap: _onItemTapped),
+              bottomNavigationBar: BottomNavBar(),
               // key: _scaffoldKey,
               drawer: ArgonDrawer(currentPage: "Home"),
               body: Container(
