@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:my_app/reducers/reducers.dart';
 import 'package:my_app/screens/influencer/campaign-application.dart';
 import 'package:my_app/screens/influencer/campaign-details.dart';
 import 'package:my_app/screens/influencer/campaigns.dart';
@@ -22,7 +23,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   Store<AppState> store =
-      Store(null, initialState: AppState.newAppState(bottomBarPosition: 0));
+      Store(appStateReducers, initialState: AppState.newAppState());
 
   @override
   Widget build(BuildContext context) {
